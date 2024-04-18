@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>format xml and ajax</title>
+    <style>
+        table,th,td
+        {
+            border:1px solid black;
+            border-collapse:collapse;
+        }
+        th,td
+        {
+            padding:15px;
+        }
+        </style>
+</head>
+<body>
+    <h1>Student Details Database</h1>
+    <button type="button" onclick="load()">View Data</button>
+    <br><br>
+    <table id="demo" ></table>
+    <script>
+        function load()
+        {
+            var xhttp=new XMLHttpRequest();
+            xhttp.onreadystatechange=function()
+            {
+                if(this.readyState==4 &&  this.status==200)
+                {
+                    retrieve(this);
+                }
+            };
+            xhttp.open("GET","student.xml",true);
+            xhttp.send();
+        }
+        function retrieve(xml)
+        {
+            var i;
+            var xmlDoc=xml.responseXML;
+            var table="<tr><th>Name</th><th>RegNo</th><th>Stype</th><th>cgpa</th></tr>"
+            var x=xmlDoc.getElementsByTagName("details");
+            for(i=0;i<x.length;i++)
+            {
+                    table+="<tr><td>"+x[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue+"</td><td>"+
+                        x[i].getElementsByTagName("Regno")[0].childNodes[0].nodeValue + "</td><td>"+
+                            x[i].getElementsByTagName("Stype")[0].childNodes[0].nodeValue +"</td><td>"+
+                                x[i].getElementsByTagName("cgpa")[0].childNodes[0].nodeValue +"</td></tr>";
+            } 
+            document.getElementById("demo").innerHTML=table;
+        }
+    </script>
+</body>
+</html>

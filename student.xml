@@ -1,0 +1,32 @@
+<students>
+    <details>
+    <Name>Jones</Name>
+    <Regno>2112120</Regno>
+    <Stype>DayScholar</Stype>
+    <cgpa>7.94</cgpa>
+    </details>
+      <details>
+    <Name>murugesan</Name>
+    <Regno>2112075</Regno>
+    <Stype>hosteler</Stype>
+    <cgpa>8.0</cgpa>
+    </details>
+      <details>
+    <Name>kesavan</Name>
+    <Regno>2112065</Regno>
+    <Stype>hosteler</Stype>
+    <cgpa>8.5</cgpa>
+    </details>
+      <details>
+    <Name>Irfaan</Name>
+    <Regno>2112074</Regno>
+    <Stype>DayScholar</Stype>
+    <cgpa>8.7</cgpa>
+    </details>
+      <details>
+    <Name>Prasanna</Name>
+    <Regno>2112078</Regno>
+    <Stype>DayScholar</Stype>
+    <cgpa>8.67</cgpa>
+    </details>
+</students>
